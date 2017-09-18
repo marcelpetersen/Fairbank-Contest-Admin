@@ -1,0 +1,18 @@
+page-winner {
+    h1 {
+        margin-bottom: 2em;
+    }
+
+    .grid {
+        justify-content: flex-start;
+
+        .row {
+            flex-grow: 0;
+            margin-top: 0.5em;
+
+            label {
+                font-weight: 600;
+            }
+        }
+    }
+}

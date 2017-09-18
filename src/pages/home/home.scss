@@ -1,0 +1,174 @@
+page-home {
+    .grid {
+        height: 100%;
+
+        .row {
+            padding: 0em 2em;
+            flex-grow: 0;
+
+            .row {
+                padding: 0em;
+                margin: 0.25em 0em;
+            }
+        }
+
+        .top-row {
+            padding: 0em;
+            flex-grow: 0;
+            position: relative;
+
+            .logo-col {
+                text-align: center;
+
+                img {
+                    margin-top: 2em;
+                    width: 85%;
+                }
+            }
+        }
+
+        .battery-status {
+            border: 1px solid #cccccc;
+            height: 1.5em;
+            position: relative;
+
+            div {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+            }
+
+            &.battery-great div {
+                background-color: #3fde44;                    
+            }
+
+            &.battery-good div {
+                background-color: #83de3f;                    
+            }
+
+            &.battery-ok div {
+                background-color: #b7de3f;                    
+            }
+
+            &.battery-bad div {
+                background-color: #de883f;                    
+            }
+
+            &.battery-dead div {
+                background-color: #de3f3f;                    
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+                font-weight: 700;
+            }
+        }
+
+        .col-name {
+            padding-right: 10px !important;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .col-charging {
+            padding: 0.2em 0.5em 0em 0.5em !important;
+
+            .icon {
+                color: #14a714;
+            }
+        }
+
+        .state-online {
+            .col-state {
+                color: #14a714;
+                font-weight: 900;
+            }
+        }
+
+        .state-offline {
+            opacity: 0.5;
+
+            .col-battery {
+                div {
+                    display: none;
+                }
+            }
+
+            .col-charging {
+                display: none;
+            }
+        }
+
+        .state-unknown {
+            .col-battery {
+                div {
+                    display: none;
+                }
+            }
+
+            .col-charging {
+                display: none;
+            }
+        }
+
+        .entries-info-row {
+        }
+
+        .entries-row {
+            flex-grow: 2;
+
+            .grid {
+                justify-content: flex-start;
+
+                .entries-heading {
+                    .col {
+                        background-color: #333333;
+                        color: #fff;
+                        padding: 0.3em 0.3em;
+                        font-weight: 800;
+                    }
+                }
+            }
+        }
+
+        .footer-row {
+            flex-grow: 0;
+            padding: 2em 3em;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    h1, h3 {
+        position: relative;
+        width: 100%;
+
+        span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+
+            a {
+                float: right;
+                font-size: 0.6em;
+                margin-left: 15px;
+                padding-top: 7px;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+}

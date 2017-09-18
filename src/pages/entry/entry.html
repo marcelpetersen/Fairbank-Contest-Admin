@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>View Entry</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>{{entry.name}}</h2>
+  
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col>
+        <label>Email Address:</label>
+      </ion-col>
+      <ion-col>
+        {{entry.email || "None"}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <label>Phone Number:</label>
+      </ion-col>
+      <ion-col>
+        {{entry.phone || "None"}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <label>Postal Code:</label>
+      </ion-col>
+      <ion-col>
+        {{entry.postalCode || "None"}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>How did they hear about us?</h4>
+        <p class="tags">
+          <ng-container *ngFor="let howHear of entry.howHear" >
+            <span *ngIf="howHear != 'other'">{{ howHearLabels[howHear] }}</span>          
+          </ng-container>
+
+          <span *ngIf="entry.howHearOther">{{entry.howHearOther}}</span>
+        </p>
+        <p class="answer" *ngIf="!entry.howHear">
+          No Response
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>How important were the FREE rides?</h4>
+        <p class="answer">
+          {{rideOptions[entry.rateRides-1]}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>How would you rate the live music?</h4>
+        <p class="answer">
+          {{rangeOptions[entry.rateMusic-1]}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>How would you rate the atmosphere?</h4>
+        <p class="answer">
+          {{rangeOptions[entry.rateAtmosphere-1]}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>How would you rate the food?</h4>
+        <p class="answer">
+          {{rangeOptions[entry.rateFood-1]}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>How would you rate the shopping?</h4>
+        <p class="answer">
+          {{rangeOptions[entry.rateShopping-1]}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>How likely will you attend next year?</h4>
+        <p class="answer">
+          {{attendOptions[entry.attendAgain-1]}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>Household status?</h4>
+        <p class="answer">
+          {{householdNames[entry.householdStatus] || "Unanswered"}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4>Additional Comments</h4>
+        <p class="answer">
+          {{entry.comments || "None"}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

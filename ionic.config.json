@@ -1,0 +1,8 @@
+{
+  "name": "Flavours Admin",
+  "app_id": "a777d780",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
